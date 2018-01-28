@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="Windows-31J" ?>
+
+<project name="Custom Doclet"  basedir=".">
+
+	<property name="source.path" value="${basedir}" />
+	
+	<target name="run-custom-doclet" description="run custom doclet">
+
+		<javac srcdir="customjavadoc"/>
+		
+		<javadoc doclet="customjavadoc.MethodListCsvDoclet"
+				docletpath="bin"
+				access="private"
+ 				additionalparam="">
+				<sourcepath path="${source.path}" />
+		</javadoc>
+	</target>
+</project>
